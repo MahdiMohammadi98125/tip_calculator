@@ -197,6 +197,22 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
+              const SizedBox(
+                height: 20,
+              ),
+              tipAmount != 0
+                  ? Text(people == 1
+                      ? 'tip: $tipAmount'
+                      : 'tip $tipAmount per person')
+                  : Container(),
+              const SizedBox(
+                height: 10,
+              ),
+              totalAmount != 0
+                  ? Text(people == 1
+                      ? 'total amount : $totalAmount'
+                      : 'total amount : $totalAmount per person')
+                  : Container(),
             ],
           ),
         ));
