@@ -119,6 +119,34 @@ class _HomePageState extends State<HomePage> {
                 },
                 decoration: const InputDecoration(hintText: "bill amount"),
               ),
+              const SizedBox(
+                height: 20,
+              ),
+              Row(
+                children: [
+                  const Text("Tips %"),
+                  const Spacer(),
+                  GestureDetector(
+                    onTap: () {
+                      tipDecrement();
+                    },
+                    child: const Icon(Icons.remove_circle),
+                  ),
+                  const SizedBox(
+                    width: 8,
+                  ),
+                  Text("${tipPercentage} %"),
+                  const SizedBox(
+                    width: 8,
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      tipIncrement();
+                    },
+                    child: const Icon(Icons.add_circle),
+                  ),
+                ],
+              )
             ],
           ),
         ));
