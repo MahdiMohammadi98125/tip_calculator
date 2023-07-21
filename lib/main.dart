@@ -83,10 +83,44 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Simple Tip Calculator'),
-        backgroundColor: Colors.blue,
-      ),
-    );
+        appBar: AppBar(
+          title: const Text('Simple Tip Calculator'),
+          backgroundColor: Colors.blue,
+        ),
+        body: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 50),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Center(
+                child: Image.asset(
+                  'images/tip.png',
+                  width: 100,
+                  height: 100,
+                ),
+              ),
+              const SizedBox(
+                height: 16,
+              ),
+              const Text(
+                "tip calculator",
+                style: TextStyle(fontSize: 17),
+              ),
+              const SizedBox(
+                height: 16,
+              ),
+              TextField(
+                onChanged: (val) {
+                  try {
+                    billAmount = double.parse(val);
+                  } catch (e) {
+                    debugPrint("$e");
+                  }
+                },
+                decoration: const InputDecoration(hintText: "bill amount"),
+              ),
+            ],
+          ),
+        ));
   }
 }
