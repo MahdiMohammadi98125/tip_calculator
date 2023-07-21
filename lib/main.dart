@@ -146,7 +146,57 @@ class _HomePageState extends State<HomePage> {
                     child: const Icon(Icons.add_circle),
                   ),
                 ],
-              )
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              Row(
+                children: [
+                  const Text("people"),
+                  const Spacer(),
+                  GestureDetector(
+                    onTap: () {
+                      peopleDecrement();
+                    },
+                    child: const Icon(Icons.remove_circle),
+                  ),
+                  const SizedBox(
+                    width: 8,
+                  ),
+                  Text("${people}"),
+                  const SizedBox(
+                    width: 8,
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      peopleIncrement();
+                    },
+                    child: const Icon(Icons.add_circle),
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              GestureDetector(
+                onTap: () {
+                  if (billAmount > 0) {
+                    calculate();
+                  }
+                },
+                child: Container(
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 12, horizontal: 24),
+                  decoration: BoxDecoration(
+                    color: Colors.blue,
+                    borderRadius: BorderRadius.circular(24),
+                  ),
+                  child: const Text(
+                    "Calculate",
+                    style: TextStyle(color: Colors.white, fontSize: 17),
+                  ),
+                ),
+              ),
             ],
           ),
         ));
