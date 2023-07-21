@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors_in_immutables
+// ignore_for_file: prefer_const_constructors_in_immutables, unnecessary_brace_in_string_interps
 
 import 'package:flutter/material.dart';
 
